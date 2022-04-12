@@ -1,4 +1,4 @@
-group 'com.vincentkammerer.sim_data'
+group 'com.selftech.sim_data'
 version '1.0'
 
 buildscript {

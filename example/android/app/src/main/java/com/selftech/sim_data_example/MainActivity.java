@@ -1,4 +1,4 @@
-package com.vincentkammerer.sim_data_example;
+package com.selftech.sim_data_example;
 
 import io.flutter.embedding.android.FlutterActivity;
 

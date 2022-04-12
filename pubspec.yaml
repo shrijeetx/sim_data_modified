@@ -1,6 +1,6 @@
 name: sim_data
 description: A Flutter plugin to retrieve Sim cards data - dual sim support - only Android for now.
-version: 0.0.2+1
+version: 0.0.2
 homepage: https://github.com/vkammerer/sim_data.git
 documentation: https://github.com/vkammerer/sim_data.git
 repository: https://github.com/vkammerer/sim_data.git
@@ -17,7 +17,8 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^1.0.0
+flutter_lints: ^1.0.0
+permission_handler: ^6.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -31,7 +32,7 @@ flutter:
   plugin:
     platforms:
       android:
-        package: com.vincentkammerer.sim_data
+        package: com.selftech.sim_data
         pluginClass: SimDataPlugin
 
   # To add assets to your plugin package, add an assets section, like this:
