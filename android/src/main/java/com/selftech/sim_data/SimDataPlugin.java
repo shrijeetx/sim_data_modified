@@ -201,7 +201,6 @@ public class SimDataPlugin implements FlutterPlugin, MethodCallHandler, Activity
       card.put("displayName", displayName.toString());
       card.put("isDataRoaming", (dataRoaming == 1));
       card.put("isNetworkRoaming", networkRoaming);
-      card.put("serialNumber", serialNumber);
       card.put("subscriptionId",subscriptionId);
       String isIccCard  = telephonyManager.getSubscriberId();
       try{
@@ -214,14 +213,14 @@ public class SimDataPlugin implements FlutterPlugin, MethodCallHandler, Activity
       // try{
       
       //get serial number of sim card/s
-//      phoneAccountHandle = phoneAccounts.next();
-//      if(count==0){
-//        card.put("serialNumber",phoneAccountHandle.getId().substring(0,19));
-//      }else{
-//        card.put("serialNumber",phoneAccountHandle.getId().substring(0,19));
-//      }
-//      count++;
-//      System.out.println("serial number - "+phoneAccountHandle.getId().substring(0,19));
+      phoneAccountHandle = phoneAccounts.next();
+      if(count==0){
+        card.put("serialNumber",phoneAccountHandle.getId().substring(0,19));
+      }else{
+        card.put("serialNumber",phoneAccountHandle.getId().substring(0,19));
+      }
+      count++;
+      System.out.println("serial number - "+phoneAccountHandle.getId().substring(0,19));
 
       // }catch(Exception ex){
       //   System.out.println("Exception on TelecomManager");
