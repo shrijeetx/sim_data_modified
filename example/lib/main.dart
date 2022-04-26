@@ -25,7 +25,6 @@ class _MyAppState extends State<MyApp> {
   }
 
   Future<void> init() async {
-    SimData simData;
     try {
       //fetching status of access to phone permission
       var status = await Permission.phone.status;
@@ -75,7 +74,7 @@ class _MyAppState extends State<MyApp> {
                             .map(
                               (SimCard card) => ListTile(
                                 leading: const Icon(Icons.sim_card),
-                                title: Text('Card'),
+                                title: const Text('Card'),
                                 subtitle: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: <Widget>[

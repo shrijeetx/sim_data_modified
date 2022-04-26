@@ -1,6 +1,7 @@
 package com.selftech.sim_data;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -74,16 +75,18 @@ public class SimDataPlugin implements FlutterPlugin, MethodCallHandler, Activity
     }
     try {
       //check if android version is android 11
-      if(android.os.Build.VERSION.SDK_INT ==30){
+      String simCards;
+      if(android.os.Build.VERSION.SDK_INT >= 30){
+        System.out.println("higher android");
         //call getSimData() to fetch sim details in case pf android 11 version
-        String simCards = getSimData().toString();
-        result.success(simCards);
+        simCards = getSimData().toString();
       }else{
+        System.out.println("lower android");
         //call getSimData1() to fetch sim details in case of android 10 or lower versions
-        String simCards = getSimData1().toString();
-        result.success(simCards);
+        simCards = getSimData1().toString();
       }
-     
+      result.success(simCards);
+
     } catch (Exception e) {
       System.out.println("Sim Data Plugin Exception");
       System.out.println(e);
@@ -100,9 +103,9 @@ public class SimDataPlugin implements FlutterPlugin, MethodCallHandler, Activity
         .getSystemService(Context.TELEPHONY_SUBSCRIPTION_SERVICE);
 
         //get list of active sim cards on device
-        List<SubscriptionInfo> subscriptionInfos  = subscriptionManager.getActiveSubscriptionInfoList();
-   
-    
+        @SuppressLint("MissingPermission") List<SubscriptionInfo> subscriptionInfos  = subscriptionManager.getActiveSubscriptionInfoList();
+
+
 
     JSONArray cards = new JSONArray();
     int i=0;
@@ -155,6 +158,7 @@ public class SimDataPlugin implements FlutterPlugin, MethodCallHandler, Activity
   }
 
   //sim data fetching method for android 11 version
+  @SuppressLint("MissingPermission")
   private JSONObject getSimData() throws Exception {
     TelecomManager tm2;
     Iterator<PhoneAccountHandle> phoneAccounts;
