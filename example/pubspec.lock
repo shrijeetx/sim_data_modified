@@ -123,7 +123,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.2"
-  sim_data:
+  sim_data_plus:
     dependency: "direct main"
     description:
       path: ".."

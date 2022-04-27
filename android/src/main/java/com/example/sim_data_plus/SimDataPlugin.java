@@ -1,4 +1,4 @@
-package com.selftech.sim_data;
+package com.example.sim_data_plus;
 
 import android.Manifest;
 import android.annotation.SuppressLint;
@@ -33,7 +33,7 @@ import java.util.Iterator;
 public class SimDataPlugin implements FlutterPlugin, MethodCallHandler, ActivityAware {
 
   //channel name, method channel, context and activity defined to call and access sim data 
-  public static final String CHANNEL_NAME = "com.selftech.sim_data/channel_name";
+  public static final String CHANNEL_NAME = "com.example.sim_data_plus/channel_name";
   private Context applicationContext;
   private Activity activity;
   private MethodChannel channel;

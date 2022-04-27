@@ -11,7 +11,7 @@ export './sim_model.dart';
 
 class SimDataPlugin {
   //defining channel to access sim data
-  static const String channelName = "com.selftech.sim_data/channel_name";
+  static const String channelName = "com.example.sim_data_plus/channel_name";
   static const MethodChannel _channel = MethodChannel(channelName);
   static Future<SimData> getSimData() async {
     try {
